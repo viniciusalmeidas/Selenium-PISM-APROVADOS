@@ -1,20 +1,17 @@
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 '''
-Este programa entra no site BRASIL BROKERS e pega os 15 (ou menos) imóveis com os seguintes filtros:
-    Local: Jardim Guanabara - RJ
-    Preço: R$300.000,00 - R$500.000,00
-    Ordem: Crescente de preço
-    Quartos: 1+
-Ainda escreve em um arquivo excel os dados destes imóveis    
+    Este programa entra no site PISM e pega os Resultados:
+    Ainda escreve em um arquivo excel as notas desses alunos   
 '''
-filename = "imoveis.csv"
+filename = "alunos.csv"
 f = open(filename, "w")
 headers = "Valor, Quartos, Banheiros, Vagas, Area, BRASIL BROKERS\n"
 f.write(headers)
 
 for i in range(1, 8):
-    my_url = f'https://brasilbrokers.com.br/busca/?mercado=pronto&localizacao=jardim-guanabara|rio-de-janeiro|rj&dormitorio=1&preco=300000,900000&pagina={i}&ordem=menor-preco'
+    #http://www4.vestibular.ufjf.br/2021/resultadofinalpism3/aprovados_cursos_6190.html #Governador Valadares
+    my_url = f'http://www4.vestibular.ufjf.br/2021/resultadofinalpism3/aprovados_cursos_3087.html'#Juiz de Fora
     uClient = uReq(my_url)
     page_html = uClient.read()
     uClient.close()
