@@ -13,13 +13,18 @@ import numpy as np
 
 def main():
     path = os.getcwd().replace("\\","/")+'/chromedriver.exe'#Caminho do ChromeDriver
+    print(path)
     driver = webdriver.Chrome(executable_path=path) #Caminho para o ChromeDriver    
     
-    for c in range(519,529):#457 - 518(Juiz de fora) #519, 529 (Governador Valadares)
-
+    for c in range(564,570):#457 - 570(Juiz de fora) #519, 529 (Governador Valadares)
+        #JF ENFERMAGEM 569 
+        #JF MODA 568
+        #JF ARTES VISUAIS 564, 565
+        #JF CINEMA 566
+        #JF DESIGN 567
         try:
             #3087 - JUIZ DE FORA e #6190 - GOVERNADOR VALADARES
-            driver.get(f'http://www4.vestibular.ufjf.br/2021/resultadofinalpism3/aprovados_listagem_6190_{c}_11.html')
+            driver.get(f'http://www4.vestibular.ufjf.br/2021/resultadofinalpism3/aprovados_listagem_3087_{c}_22.html')
             # Loop para os grupos
             # A 11 , A1 20  
             # B 12 , B1 19
