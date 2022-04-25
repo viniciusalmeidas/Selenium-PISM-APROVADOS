@@ -34,7 +34,7 @@
 
 4. **`chromedriver.exe`**: Versão do Chromedriver 90.0.4430.72 (Versão oficial) 64 bits necessário para interagir com Seleninium. Atualize de acordo com a versão do seu navegador.
 
-5. **`resultado-pis.py`**: Aplicação em si, basta seguir os passos e instalar as dependências. Este diretório contém todo o código relacionado ao que você verá no front-end.
+5. **`resultado-pism.py`**: Aplicação em si, basta seguir os passos e instalar as dependências. Este diretório contém todo o código relacionado ao que você verá no front-end.
 
 
 
@@ -47,12 +47,20 @@
     Instale as dependencias.
     
 ### instalar o Numpy, Selenium 
+ `python version 3.10-64bits`
  `pip install numpy`
  `pip install selenium`
 
 ### baixar o WebDriver Chrome atualizado
-Cheque sua ver~so do Chrome e baixe o Chromedriver atualizado abaixo.
+
+Cheque sua versão do Chrome e baixe o Chromedriver atualizado abaixo.
 https://chromedriver.chromium.org/downloads
+
+[![Youtube Badge](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://help.agenciadatecnologia.com.br/como-atualizar-o-chromedriver-de-acordo-com-a-versao-mais-recente-do-google-chrome/)
+
+[Como Atualizar o ChromeDriver] (https://help.agenciadatecnologia.com.br/como-atualizar-o-chromedriver-de-acordo-com-a-versao-mais-recente-do-google-chrome/)
+
+
 
 <hr> 
 

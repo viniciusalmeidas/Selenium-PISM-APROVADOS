@@ -10,27 +10,31 @@ from sys import exit
 import os 
 import numpy as np
 
-""" Esse programa utiliza Selenium em Python para coletar o nome dos aprovados no PISM no triênio 2018-2020, desenvolvido dia 17-04-2021. Utiliza a mesma lógica criada pelo autor VINICIUS ALMEIDA @viniciusalmeidas(GitHub) no Projeto Brasil-Brokers. 
+""" Esse programa utiliza Selenium em Python para coletar o nome dos aprovados no PISM no triênio 2019-2021, desenvolvido dia 17-04-2021. Utiliza a mesma lógica criada pelo autor VINICIUS ALMEIDA @viniciusalmeidas(GitHub) no Projeto Brasil-Brokers. 
 """
 
 def main():
+    # ESCOLHE O Ano da busca
+    ano = 2022
+    # ESCOLHE O CAMPUS
+    campus='gv'
+    # SETAGEM do Loop para os grupos
+    groupsWeb=[11,20,12,19,13,14,21,15,22] #A 11 , A1 20 , B 12 , B1 19, C 13; D 14 , D1 21, E 15 , E1 22
+    
+    
     path = os.getcwd().replace("\\","/")+'/chromedriver.exe'#Caminho do ChromeDriver
     options = Options()
     options.add_argument("start-maximized")    
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options) #Caminho para o ChromeDriver    
-    # Ano da busca
-    ano = 2022
-    # Loop para os grupos
-    groupsWeb=[11,20,12,19,13,14,21,15,22] # A 11 , A1 20 , B 12 , B1 19, C 13; D 14 , D1 21, E 15 , E1 22
-    # Campus
-    campus='gv'
-    n_campus=6190
+    
+    #DAR NUMERO AO CAMPUS
+    n_campus=0
     if campus == 'gv':
         n_campus = 6190
     elif campus == 'jf':
         n_campus = 3087
-
-    for c in range(519,530):#457 - 570(Juiz de fora) #519- 529 (Governador Valadares)
+    
+    for c in range(519,529):#457 - 570(Juiz de fora) #519- 529 (Governador Valadares)
         #JF ARTES VISUAIS 564 e 565
         #JF CINEMA 566
         #JF DESIGN 567
@@ -86,7 +90,7 @@ def main():
                 f.write(headers) #Escrever Cabeçalho
                 
                 for i in range(0,quantidade):
-                    f.write(f'{linhas[i]}\n') 
+                    f.write(f'{linhas[i]}\n') #Escrevendo no arquivo csv
                 
                 f.close() #Fechar arquivo  
                 driver.refresh()
@@ -101,9 +105,9 @@ def main():
                 
         
 
+
 if __name__ == '__main__':
     main()
-
 
 
 
