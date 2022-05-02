@@ -17,7 +17,7 @@ def main():
     # ESCOLHE O Ano da busca
     ano = 2022
     # ESCOLHE O CAMPUS
-    campus='gv'
+    campus='jf'
     # SETAGEM do Loop para os grupos
     groupsWeb=[11,20,12,19,13,14,21,15,22] #A 11 , A1 20 , B 12 , B1 19, C 13; D 14 , D1 21, E 15 , E1 22
     
@@ -31,10 +31,15 @@ def main():
     n_campus=0
     if campus == 'gv':
         n_campus = 6190
+        inicio = 457
+        fim = 570
+
     elif campus == 'jf':
         n_campus = 3087
+        inicio = 519
+        fim = 529
     
-    for c in range(519,529):#457 - 570(Juiz de fora) #519- 529 (Governador Valadares)
+    for c in range(inicio,fim):#457 - 570(Juiz de fora) #519- 529 (Governador Valadares)
         #JF ARTES VISUAIS 564 e 565
         #JF CINEMA 566
         #JF DESIGN 567
