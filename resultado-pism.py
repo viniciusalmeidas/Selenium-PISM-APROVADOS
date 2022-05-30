@@ -17,7 +17,7 @@ def main():
     # ESCOLHE O Ano da busca
     ano = 2022
     # ESCOLHE O CAMPUS
-    campus='jf'
+    campus='gv'
     # SETAGEM do Loop para os grupos
     groupsWeb=[11,20,12,19,13,14,21,15,22] #A 11 , A1 20 , B 12 , B1 19, C 13; D 14 , D1 21, E 15 , E1 22
     
@@ -29,17 +29,17 @@ def main():
     
     #DAR NUMERO AO CAMPUS
     n_campus=0
-    if campus == 'gv':
+    if campus == 'gv':#519- 529 (Governador Valadares)
         n_campus = 6190
-        inicio = 457
-        fim = 570
-
-    elif campus == 'jf':
-        n_campus = 3087
         inicio = 519
         fim = 529
+
+    elif campus == 'jf':#457 - 570(Juiz de fora)
+        n_campus = 3087
+        inicio = 457
+        fim = 570
     
-    for c in range(inicio,fim):#457 - 570(Juiz de fora) #519- 529 (Governador Valadares)
+    for c in range(inicio,fim): 
         #JF ARTES VISUAIS 564 e 565
         #JF CINEMA 566
         #JF DESIGN 567
@@ -47,7 +47,7 @@ def main():
         #JF ENFERMAGEM 569 
         for z in groupsWeb:
             try:          
-                driver.get(f'http://www4.vestibular.ufjf.br/{ano}/resultadofinalpism3/aprovados_listagem_{n_campus}_{c}_{z}.html')
+                driver.get(f'http://www4.vestibular.ufjf.br/{ano}/resultadofinalpism3_alterado/aprovados_listagem_{n_campus}_{c}_{z}.html')
                 sleep(1.5) 
                 driver.refresh() 
                 quantidade = len(driver.find_elements(by=By.XPATH, value='//*[@id="example"]/tbody/tr')) #número de aprovados na página        
